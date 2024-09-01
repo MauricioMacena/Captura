@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de E-mail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="email"], input[type="submit"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .message {
+            text-align: center;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            input[type="email"], input[type="submit"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Baixe Seu E-book Gratuito!</h1>
+        <form id="emailForm">
+            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+            <input type="submit" value="Baixar E-book">
+        </form>
+        <div id="message" class="message"></div>
+    </div>
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            // Aqui você pode adicionar a lógica para enviar o e-mail para o backend ou serviço de e-mail
+            document.getElementById('message').innerHTML = 'Obrigado! Seu e-book está pronto para download. <a href="link-para-o-ebook.pdf">Baixe aqui</a>.';
+            document.getElementById('email').value = ''; // Limpa o campo de e-mail após o envio
+        });
+    </script>
+</body>
+</html>
